@@ -1,0 +1,21 @@
+### Save user
+POST http://localhost:8080/api/user
+Content-Type: application/json
+
+
+{
+    "lastName": "John123",
+    "firstName": "John",
+    "experience": 15,
+    "officeId": "9f47213e-814d-483a-9a56-fd7c9438a0f4",
+    "teamId": "5d538bc8-0644-42de-b1eb-d8afaf47871e"
+}
+
+### Get All users
+GET http://localhost:8080/api/user
+Content-Type: application/json
+
+### Get User by id
+
+GET http://localhost:8080/api/user/5422df61-f6dc-496d-a9bf-5c7352275d24
+Content-Type: application/json
