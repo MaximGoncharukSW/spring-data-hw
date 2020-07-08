@@ -68,7 +68,7 @@ public class ProjectServiceIntegrationTest {
 		var projectsNumber = projectService.getCountWithRole(role);
 
 		// assert
-		assertThat(projectsNumber).isEqualTo(5);
+		assertThat(projectsNumber).isEqualTo(3);
 	}
 
 	@Test
