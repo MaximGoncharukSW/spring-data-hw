@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,6 +15,7 @@ public class UserServiceIntegrationTest {
 	private UserService userService;
 
 	@Test
+	@Transactional
 	public void getUsersByLastName() {
 		// arrange
 		var lastName = "b";
@@ -30,6 +32,7 @@ public class UserServiceIntegrationTest {
 	}
 
 	@Test
+	@Transactional
 	public void getUsersByCity() {
 		// arrange
 		var city = "Lviv";
@@ -43,6 +46,7 @@ public class UserServiceIntegrationTest {
 	}
 
 	@Test
+	@Transactional
 	public void getUsersByExperience() {
 		// arrange
 		var experience = 5;
@@ -56,6 +60,7 @@ public class UserServiceIntegrationTest {
 	}
 
 	@Test
+	@Transactional
 	public void getUsersByRoomAndCity() {
 		// arrange
 		var city = "Lviv";
@@ -70,6 +75,7 @@ public class UserServiceIntegrationTest {
 	}
 
 	@Test
+	@Transactional
 	@Sql(scripts = { "/clean.sql", "/data.sql" }, executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 	public void deleteUsersByExperience() {
 		// arrange
